@@ -1,0 +1,68 @@
+import random
+#Learning about Functions
+def get_choices():
+    player_choice = input("Enter a choice (rock / paper / scissor): ")
+    options = ["rock", "paper", "scissor"]
+    computer_choice = random.choice(options)
+    choices = {"player":player_choice, "computer": computer_choice}
+    return choices
+
+def check_win(player,computer):
+    print(f"You chose {player}, computer chose {computer}")
+    if player == computer:
+        return "It's a tie!"
+    elif player == "rock":
+        if computer == "paper":
+            return "Computer Win!"
+        else:
+            return "You win!"
+    elif player == "paper":
+        if computer == "scissor":
+            return "Computer Win!"
+        else:
+            return "You win!" 
+    else:
+        if computer == "rock":
+            return "Computer Win!"
+        else:
+            return "You win!" 
+    return[player,computer]
+
+choice = get_choices()
+result = check_win(choice["player"], choice["computer"])
+print(choice)
+print(result)
+
+#dictionary
+#dict = {"name": "Eugenia", "color" : choices}
+
+#user input
+#input("Enter a choice (rock / paper / scissor): ")
+
+#RPS (Libraries, Lists, Methods)
+#Ex of Libraries
+#import random
+
+#Ex of List
+#food = ["pizza", "carrots", "eggs"]
+#dinner = random.choice(food)
+
+#print
+#print("You chose " + player + ", computer chose " + computer)
+#print(f"You chose {player}, computer chose {computer}")
+
+#elif
+"""
+elif player == "rock" and computer == "scissor":
+        return "You win!"
+    elif player == "rock" and computer == "paper":
+        return "Computer win!"
+    elif player == "paper" and computer == "rock":
+        return "You win!"
+    elif player == "paper" and computer == "scissor":
+        return "Computer win!"
+    elif player == "scissor" and computer == "paper":
+        return "You win!"
+    elif player == "scissor" and computer == "rock":
+        return "Computer win!"
+"""
